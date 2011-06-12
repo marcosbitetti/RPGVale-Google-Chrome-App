@@ -17,6 +17,8 @@ body {
 	overflow: auto;
 	overflow-x: inherit;
 	font-family: Arial, Helvetica, sans-serif;
+	background-image: url(../img/background.jpg);
+	background-repeat: no-repeat;
 }
 
 body header {
@@ -26,18 +28,42 @@ body header {
 	text-align: center;
 }
 
-header ul {
+nav {
+	margin-top: 163px;
+	height: 24px !important;
+	padding-left: 8px;
+}
+
+nav ul {
 	display: block;
 }
 
-header li {
+nav li {
 	float: left;
 	list-style-position:;
 	list-style-type: none;
-	margin-right: 8px;
+	margin-right: 16px;
+}
+
+nav a {
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+
+nav a:hover {
+	color: #ffff00;
+	text-decoration: none;
 }
 
 section {
+}
+
+#loaderinit {
+	position: absolute;
+	left: 74px;
+	top: 250px;
 }
 
 #content {
@@ -57,17 +83,10 @@ section {
 	font-size: 10px;
 	
 	padding-bottom: 8px;
-	
-	-webkit-box-shadow: 2px 3px 8px #16161a;
-	-moz-box-shadow: 2px 3px 8px #16161a;
-	box-shadow: 2px 3px 8px #16161a;
-	
-	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
-	border-radius: 8px;
-	
-	background-image: url(../img/RPGVale_top_post01.jpg);
+	background: rgba(0,0,0, 0.6);
+	background-image: url(../img/RPGVale_top_post01.png);
 	background-repeat: no-repeat;
+	margin-top: 12px;
 }
 
 #content article header {

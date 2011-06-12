@@ -50,6 +50,9 @@ function templateLoaded( content )
 	template = content;
 	//dispara processo das entradas
 	getHostData();
+	
+	//remove loading info
+	$("#loaderinit").remove();
 }
 
 function templateError( event )
