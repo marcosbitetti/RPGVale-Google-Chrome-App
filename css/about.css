@@ -1,0 +1,37 @@
+body {
+	font-size: 14px;
+	color: #EEEEEE;
+}
+
+#content {
+	margin-top: 24px;
+}
+
+img {
+	display: block;
+}
+
+footer {
+	text-align: center;
+	margin-top: 24px;
+}
+
+a {
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+
+a:hover {
+	color: #FFFF00;
+}
+
+h2 {
+	
+}
+
+p {
+	background: rgba( 0,0,0, 0.6);
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 24px;
+}

@@ -11,7 +11,8 @@
 					"http://api.flickr.com/",
 					"http://feeds.feedburner.com/",
 					"http://th04.deviantart.net/",
-					"http://www.rpgvale.com.br/"
+					"http://www.rpgvale.com.br/",
+					"tabs"
 	],
 	"icons": {
 		"16":			"img/icon_16.png",
