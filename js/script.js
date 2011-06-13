@@ -111,20 +111,25 @@ function insertElement()
 			return; //erro de template
 		
 		//formata imagem
-		var img = "<a href=\"\">"+
+		var img = "<a href=\"javascript:abrirItem('"+ arguments[3] +"')\" title=\""+ arguments[0] +"\">"+
 			"<img src=\"" + 
 			getImageData( arguments[2] ) +
-			"\" alt=\"\" width=\"234\" ></a>";
+			"\" alt=\""+ arguments[0] +"\" width=\"234\" ></a>";
 		var text = getPureText( arguments[2]);
 		arguments[2] = img + "<p>" + getMinPalavras(text) + "...</p>";
 		
 		var html = template;
 		for(var i=0; i<arguments.length; i++)
 		{
-			var ini = html.indexOf(templatevars[i]);
-			html = html.substr(0, ini) +
-				arguments[i] +
-				html.substr( ini + templatevars[i].length);
+			while (true)
+			{
+				var ini = html.indexOf(templatevars[i]);
+				if (ini<0) break;
+				
+				html = html.substr(0, ini) +
+					arguments[i] +
+					html.substr( ini + templatevars[i].length);
+			}
 		}
 		$("#content").append(html);
 	}
@@ -137,10 +142,47 @@ function insertElement()
 
 
 /****
- * Manipula o feed de dados 
+ * Manipula o feed de dados
+ * 
+ * NOTA: Os dados processados pelo JFeed não leem todos os
+ *       links do Feed Atom, então improvisei um mecanismo
+ *       de "localização de texto" bem vulgar.
+ *       Considere isso uma solução estilo XGH
+ * 
+ * TODO: Aprimorar o mecanismo de leitura removendo o XGH
  */
- 
- 
+
+/**
+ * Chama o feed apartir do feedburner e
+ * manda o resultado para t_showItem
+ */
+function abrirItem( link )
+{
+	$.ajax(
+		{
+			url:link,
+			success: t_showItem,
+			processData: false,
+			dataType: "text"
+		}
+	);
+}
+
+/**
+ * Pega o textu puro retornado pelo Feed Burner
+ * e localiza o link certo.
+ */
+function t_showItem( entry )
+{
+	var rg = /\<link rel\=['"]alternate['"].*href\=['"]http\:\/\/www\.rpgvale\.com\.br\//;
+	var ob = rg.exec( String(entry) );
+	if (ob == null )
+		return link;
+	
+	var p = ob.index + ob[0].length;
+	abrir( entry.substring( p-26, entry.indexOf("'", p+1)) );
+}
+
 // exibe o feed
 function t_showFeed( feed )
 {
@@ -151,7 +193,7 @@ function t_showFeed( feed )
 		insertElement(
 			item.title,
 			item.updated,
-			String(item.description),//.substring(0,140),
+			String(item.description),
 			item.link
 		);
 	}	
@@ -160,7 +202,7 @@ function t_showFeed( feed )
 //erro
 function t_error( e )
 {
-	//alert(e);
+	alert(e);
 }
 
 // acessa o servidor
@@ -174,6 +216,15 @@ function getHostData()
 		}
 	);
 }
+
+
+/**
+ * abre a url numa nova tab
+ */
+function abrir( url )
+{
+	chrome.tabs.create( {url:url} );
+} 
 
 
 /**
