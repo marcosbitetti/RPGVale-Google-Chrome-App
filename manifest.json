@@ -1,16 +1,15 @@
 {
 	"name":				"RPG Vale Noticías",
 	"version":			"1.0",
-	"description":			"RPG Vale, um blog de RPG e cultura Nerd",
+	"description":			"Fique por dentro um dos melhores blogs RPGistas.",
 	"browser_action": {
 		"default_icon":		"img/icon.png",
 		"popup":		"main.html",
-		"default_title":	"RPG Vale, um blog de RPG e cultura Nerd"
+		"default_title":	"RPG Vale - um blog de RPG e cultura Nerd"
 	},
 	"permissions": [
-					"http://api.flickr.com/",
+					"http://www.blogger.com/",
 					"http://feeds.feedburner.com/",
-					"http://th04.deviantart.net/",
 					"http://www.rpgvale.com.br/",
 					"tabs"
 	],

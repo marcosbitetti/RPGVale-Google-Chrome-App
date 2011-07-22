@@ -2,6 +2,8 @@
 
 <img src="https://github.com/marcosbitetti/RPGVale-Google-Chrome-App/raw/master/img/header-App.png" alt="rpgvale" width="238" height="137" style="padding: 2px; border: solid 1px #a0a0a0; margin: 4px; float: right;" /><a href="http://www.rpgvale.com.br/" targe="_new">@RPGVale</a> é um blog de RPG e cultura Nerd que agora disponibiliza seu conteúdo de forma mais global e de acesso rápido.
 
+Baixem a extensão <a href="https://chrome.google.com/webstore/detail/lbmgkicmghgobckdddamllkfpplgmoib">https://chrome.google.com/webstore/detail/lbmgkicmghgobckdddamllkfpplgmoib</a>
+
 ##Fontes (source)
 Esta aplicação foi desenvolvida usando HTML5 e Javascript com as seguintes ferramentas:
 JQuery framework, Aptana Studio, Blue Griffon, GIMP e Aviary.com
